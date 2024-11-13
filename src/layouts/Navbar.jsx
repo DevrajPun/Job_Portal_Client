@@ -62,7 +62,7 @@ function Navbar() {
                   Job List
                 </Link>
                 <Link
-                  to="/appliedjobs"
+                  to="/user's/appliactions"
                   className="nav-item nav-link"
                   onClick={closeNavbar}
                 >

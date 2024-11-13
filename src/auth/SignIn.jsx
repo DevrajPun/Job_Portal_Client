@@ -19,9 +19,9 @@ export default function SignIn() {
         role,
         password,
       });
-      toast.success("You have logged in successfully!", {
+      toast.success(response.data.message, {
         position: "top-right",
-        duration: 2000,
+        duration: 4000,
       });
       setEmail("");
       setPassword("");
@@ -29,9 +29,10 @@ export default function SignIn() {
       setIsAuthorized(true);
     } catch (error) {
       console.error(error);
-      toast.error("Login failed. Please try again.", {
+      const message = error.response?.data?.message;
+      toast.error(message, {
         position: "top-right",
-        duration: 2000,
+        duration: 4000,
       });
     }
   };
@@ -90,7 +91,7 @@ export default function SignIn() {
           </button>
           <p className="text-center">
             Click here for{" "}
-            <Link to="/registration" className="text-primary">
+            <Link to="/signup" className="text-primary">
               registration
             </Link>
           </p>

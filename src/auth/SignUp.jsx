@@ -27,28 +27,26 @@ export default function SignUp() {
     e.preventDefault();
     try {
       const response = await axios.post("/api/signUp", data);
+
       if (response.status === 201) {
-        toast.success(response.data.message || "Registration successful!", {
+        toast.success(response.data.message, {
           position: "top-right",
-          duration: 2000,
+          duration: 4000,
         });
-        setData(initialData); // Reset form data
-        navigate("/"); // Redirect to home page
+        setData(initialData);
+        navigate("/");
       } else {
-        toast.error(
-          response.data.message || "Registration failed. Please try again.",
-          {
-            position: "top-right",
-            duration: 2000,
-          }
-        );
+        toast.error(response.data.message, {
+          position: "top-right",
+          duration: 4000,
+        });
       }
     } catch (error) {
-      // Log the error for debugging
       console.error("Error during registration:", error);
-      toast.error("Registration failed. Please try again.", {
+      const message = error.response?.data?.message;
+      toast.error(message, {
         position: "top-right",
-        duration: 2000,
+        duration: 4000,
       });
     }
   };
@@ -127,7 +125,7 @@ export default function SignUp() {
               required
             >
               <option value="">Select Role</option>
-              <option value="user">Job Seeker</option>
+              <option value="jobSeeker">Job Seeker</option>
               <option value="employer">Employer</option>
             </select>
           </div>

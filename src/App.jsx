@@ -14,7 +14,6 @@ import SignIn from "./auth/SignIn";
 import Contact from "./components/Contact";
 import NotFound from "./NotFound/NotFound";
 import Postedjobs from "./jobs/Postedjobs";
-import Appliedjobs from "./jobs/Appliedjobs";
 import CategoryInsert from "./jobs/CategoryInsert";
 import Application from "./applications/Application";
 import MyApplications from "./applications/MyApplications";
@@ -45,7 +44,6 @@ function App() {
         <Route path="/jobdetails/:id" element={<Jobdetails />} />
         <Route path="/jobposting" element={<Jobposting />} />
         <Route path="/postedjobs" element={<Postedjobs />} />
-        <Route path="/appliedjobs" element={<Appliedjobs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/categoryinsert" element={<CategoryInsert />} />
         <Route path="/appliaction/:id" element={<Application />} />
